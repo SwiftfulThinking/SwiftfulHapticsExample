@@ -14,6 +14,7 @@
 		02349F572BFA65A0003BB2B7 /* SwiftfulHapticsExampleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02349F562BFA65A0003BB2B7 /* SwiftfulHapticsExampleTests.swift */; };
 		02349F612BFA65A0003BB2B7 /* SwiftfulHapticsExampleUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02349F602BFA65A0003BB2B7 /* SwiftfulHapticsExampleUITests.swift */; };
 		02349F632BFA65A0003BB2B7 /* SwiftfulHapticsExampleUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02349F622BFA65A0003BB2B7 /* SwiftfulHapticsExampleUITestsLaunchTests.swift */; };
+		02349F752BFC2C12003BB2B7 /* SwiftfulHaptics in Frameworks */ = {isa = PBXBuildFile; productRef = 02349F742BFC2C12003BB2B7 /* SwiftfulHaptics */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -52,6 +53,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				02349F752BFC2C12003BB2B7 /* SwiftfulHaptics in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -145,6 +147,9 @@
 			dependencies = (
 			);
 			name = SwiftfulHapticsExample;
+			packageProductDependencies = (
+				02349F742BFC2C12003BB2B7 /* SwiftfulHaptics */,
+			);
 			productName = SwiftfulHapticsExample;
 			productReference = 02349F412BFA659F003BB2B7 /* SwiftfulHapticsExample.app */;
 			productType = "com.apple.product-type.application";
@@ -217,6 +222,9 @@
 				Base,
 			);
 			mainGroup = 02349F382BFA659F003BB2B7;
+			packageReferences = (
+				02349F732BFC2C12003BB2B7 /* XCRemoteSwiftPackageReference "SwiftfulHaptics" */,
+			);
 			productRefGroup = 02349F422BFA659F003BB2B7 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -444,6 +452,7 @@
 				SDKROOT = auto;
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
 				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_STRICT_CONCURRENCY = complete;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -482,6 +491,7 @@
 				SDKROOT = auto;
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
 				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_STRICT_CONCURRENCY = complete;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -617,6 +627,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		02349F732BFC2C12003BB2B7 /* XCRemoteSwiftPackageReference "SwiftfulHaptics" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SwiftfulThinking/SwiftfulHaptics.git";
+			requirement = {
+				branch = main;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		02349F742BFC2C12003BB2B7 /* SwiftfulHaptics */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 02349F732BFC2C12003BB2B7 /* XCRemoteSwiftPackageReference "SwiftfulHaptics" */;
+			productName = SwiftfulHaptics;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 02349F392BFA659F003BB2B7 /* Project object */;
 }

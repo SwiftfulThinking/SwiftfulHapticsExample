@@ -6,16 +6,43 @@
 //
 
 import SwiftUI
+import SwiftfulHaptics
 
+private struct HapticManagerKey: EnvironmentKey {
+    static let defaultValue: HapticManager = HapticManager()
+}
+
+extension EnvironmentValues {
+    var haptics: HapticManager {
+        get { self[HapticManagerKey.self] }
+        set { self[HapticManagerKey.self] = newValue }
+    }
+}
 struct ContentView: View {
+    
+    @Environment(\.haptics) var haptics
+    
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundStyle(.tint)
-            Text("Hello, world!")
+        NavigationStack {
+            List {
+                ForEach(HapticOption.allCases, id: \.rawValue) { option in
+                    Button(option.rawValue.capitalized) {
+                        Task {
+                            try? await haptics.play(option: option)
+                        }
+                    }
+                    .task {
+                        try? await haptics.prepare(option: option)
+                    }
+                }
+            }
+            .navigationTitle("Haptic Options")
         }
-        .padding()
+        .onDisappear {
+            Task {
+                try? await haptics.tearDownAll()
+            }
+        }
     }
 }
 

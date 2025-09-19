@@ -6,8 +6,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/SwiftfulThinking/SwiftfulHaptics.git",
       "state" : {
-        "revision" : "01423381c8c9ddba7857d4659d01cf4e87a19e13",
-        "version" : "2.0.0"
+        "revision" : "87a24c77629221e761ea90bf3d837362bdb5773a",
+        "version" : "2.0.1"
       }
     }
   ],

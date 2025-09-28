@@ -426,9 +426,7 @@ struct HapticCategoryView: View {
             Section {
                 ForEach(filteredButtons, id: \.title) { button in
                     Button(action: {
-                        Task {
-                            await hapticManager.play(option: button.hapticOption)
-                        }
+                        hapticManager.play(option: button.hapticOption)
                     }) {
                         HStack {
                             VStack(alignment: .leading, spacing: 6) {
